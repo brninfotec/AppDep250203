@@ -12,7 +12,7 @@ function Login() {
   let navigate = useNavigate();
   let dispatch = useDispatch();
 
-  axios.defaults.baseURL = 'http://localhost:3333';
+  axios.defaults.baseURL = '';
 
   useEffect(()=>{
     if(localStorage.getItem("token")){

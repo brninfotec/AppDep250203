@@ -3,13 +3,19 @@ const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
+const path = require("path");
 
 let app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use('/profilePics', express.static('profilePics'));
+app.use(express.static(path.join(__dirname, "./client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 require("dotenv").config();
 
