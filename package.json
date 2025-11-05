@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "build": "yarn install --cwd ./client && yarn build --cwd ./client && yarn install"
+    "build": "yarn install --cwd client && yarn build --cwd client"
+
   },
   "keywords": [],
   "author": "",
